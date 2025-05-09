@@ -90,7 +90,7 @@ const commonSteps = {
     title: "Gear Up!",
     details: (
       <>
-        <p>Let's brew an exceptional cup. You'll need:</p>
+        <p>Let&apos;s brew an exceptional cup. You&apos;ll need:</p>
         <ul>
           <li>Fresh Coffee Beans</li>
           <li>Coffee Grinder (burr grinder recommended)</li>
@@ -149,7 +149,7 @@ const lightRoastPouroverSteps: Step[] = [
   },
   {
     title: "The Bloom",
-    details: <p>Start timer! Pour ~2x water amount of coffee (ex: 40g water for 20g coffee) to saturate grounds. Wait 30-45s for CO2 release (the 'bloom').</p>,
+    details: <p>Start timer! Pour ~2x water amount of coffee (ex: 40g water for 20g coffee) to saturate grounds. Wait 30-45s for CO2 release (the &apos;bloom&apos;).</p>,
     imageSrc: "/coffeebloom.jpg",
     imageAlt: "Overhead view of coffee blooming in a V60 pour over, with CO2 bubbles visible.",
     imageWidth: 600,  // Adjust to your image's actual aspect ratio
