@@ -66,7 +66,7 @@ const Timer: React.FC<TimerProps> = ({ durationSeconds, onTimerEnd, autoStart = 
         )}
         <button onClick={handleReset} className={`${styles.controlButton} ${styles.resetButton}`}><IconReset />Reset</button>
       </div>
-      {timeLeft <= 0 && <p className={styles.timerMessage}>Time's up!</p>}
+      {timeLeft <= 0 && <p className={styles.timerMessage}>Time&apos;s up!</p>}
     </div>
   );
 };
