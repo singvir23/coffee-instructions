@@ -1,0 +1,259 @@
+/* CoffeePage.module.css */
+
+/* --- Global Styles (Apply to body in layout.tsx or a wrapper) --- */
+.appContainer {
+    background-color: #121212; /* Very dark background */
+    color: #e0e0e0; /* Light primary text */
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  /* --- Main Page Container --- */
+  .coffeeGuideContainer {
+    background-color: #1e1e1e; /* Slightly lighter card background */
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    padding: 30px 40px;
+    width: 100%;
+    max-width: 650px;
+    text-align: center;
+    border: 1px solid #333; /* Subtle border */
+  }
+  
+  /* --- Headers --- */
+  .mainHeader {
+    font-size: 2.5em;
+    font-weight: 600;
+    color: #f5f5f5; /* Brighter white for main headers */
+    margin-bottom: 15px;
+  }
+  
+  .subHeader {
+    font-size: 1.2em;
+    color: #a0a0a0; /* Softer color for subtext */
+    margin-bottom: 30px;
+    line-height: 1.6;
+  }
+  
+  .stepHeader {
+    font-size: 1.8em;
+    font-weight: 500;
+    color: #e0e0e0;
+    margin-bottom: 25px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #333; /* Subtle separator */
+  }
+  
+  /* --- Choice Selection --- */
+  .choiceContainer {
+    display: flex;
+    flex-direction: column; /* Stack buttons on smaller screens */
+    gap: 20px;
+    margin: 30px 0;
+  }
+  
+  @media (min-width: 600px) {
+    .choiceContainer {
+      flex-direction: row; /* Side-by-side on larger screens */
+      justify-content: center;
+    }
+  }
+  
+  .choiceButton {
+    background-color: #2a2a2a;
+    color: #e0e0e0;
+    border: 1px solid #444;
+    padding: 20px;
+    border-radius: 8px;
+    font-size: 1.1em;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    flex: 1; /* Make buttons take equal space in a row */
+  }
+  
+  .choiceButton:hover {
+    background-color: #333;
+    transform: translateY(-3px);
+  }
+  
+  .choiceButtonIcon {
+    font-size: 1.8em; /* Placeholder for icon size */
+  }
+  
+  
+  /* --- Step Content --- */
+  .stepContent {
+    background-color: #252525; /* Darker content area inside the card */
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 25px;
+    text-align: left;
+    line-height: 1.7;
+    color: #c0c0c0; /* Slightly softer text for details */
+  }
+  
+  .stepContent p, .stepContent ul {
+    margin-bottom: 15px;
+  }
+  
+  .stepContent ul {
+    list-style-type: none; /* Remove default bullets */
+    padding-left: 0;
+  }
+  
+  .stepContent li {
+    padding-left: 25px;
+    position: relative;
+    margin-bottom: 8px;
+  }
+  
+  .stepContent li::before {
+    content: '●'; /* Custom bullet, could be an SVG icon */
+    color: #FFA726; /* Accent color for bullets */
+    position: absolute;
+    left: 0;
+    font-size: 0.9em;
+    top: 3px;
+  }
+  
+  
+  /* --- Figure Placeholder --- */
+  .figurePlaceholder {
+    border: 2px dashed #444;
+    background-color: #2a2a2a;
+    padding: 20px;
+    margin: 20px auto;
+    border-radius: 6px;
+    text-align: center;
+    font-style: italic;
+    color: #888;
+    max-width: 90%;
+  }
+  
+  .figurePlaceholder p {
+    font-size: 0.9em;
+    color: #777;
+    margin-top: 8px;
+  }
+  
+  /* --- Timer --- */
+  .timerContainer {
+    margin: 25px 0;
+    padding: 15px;
+    background-color: #2a2a2a;
+    border-radius: 8px;
+    text-align: center;
+    border: 1px solid #383838;
+  }
+  
+  .timerDisplay {
+    font-size: 2.8em;
+    font-weight: bold;
+    color: #FFA726; /* Accent color for timer */
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+  }
+  
+  .timerControls button {
+    margin: 0 5px;
+  }
+  
+  .timerMessage {
+    color: #4CAF50; /* Green for success */
+    font-weight: bold;
+    margin-top: 10px;
+  }
+  
+  /* --- Tips and Cautions --- */
+  .tipBox {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: rgba(66, 139, 202, 0.1); /* Muted blue for tips */
+    border-left: 5px solid #428bca;
+    border-radius: 4px;
+    color: #b3d4fc;
+  }
+  
+  .tipBox strong::before {
+    content: "💡 "; /* Using an actual lightbulb emoji here for simplicity in CSS, can be icon font */
+  }
+  
+  
+  .cautionBox {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: rgba(240, 173, 78, 0.1); /* Muted orange for cautions */
+    border-left: 5px solid #f0ad4e;
+    border-radius: 4px;
+    color: #f8c97c;
+  }
+  
+  .cautionBox strong::before {
+    content: "⚠️ "; /* Using an actual warning emoji here for simplicity in CSS, can be icon font */
+  }
+  
+  
+  /* --- Navigation --- */
+  .navigationControls {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+  }
+  
+  .navButton, .controlButton, .timerControls button {
+    background-color: #FFA726; /* Primary accent color */
+    color: #121212; /* Dark text on bright button */
+    border: none;
+    padding: 12px 25px;
+    border-radius: 6px;
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, opacity 0.3s ease;
+    display: inline-flex; /* For icon alignment if added */
+    align-items: center;
+    gap: 8px; /* Space between icon and text */
+  }
+  
+  .navButton:hover, .controlButton:hover, .timerControls button:hover {
+    background-color: #FFC966; /* Lighter shade for hover */
+  }
+  
+  .navButton:disabled, .timerControls button:disabled {
+    background-color: #444;
+    color: #777;
+    cursor: not-allowed;
+    opacity: 0.7;
+  }
+  
+  .resetButtonContainer {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  .resetButton {
+    background-color: #555;
+    color: #e0e0e0;
+    padding: 10px 20px;
+  }
+  .resetButton:hover {
+    background-color: #666;
+  }
+  
+  /* Icon placeholders - you would use actual SVGs or an icon font */
+  .iconArrowLeft::before { content: "[←]"; margin-right: 5px; }
+  .iconArrowRight::before { content: "[→]"; margin-left: 5px; }
+  .iconStart::before { content: "[▶]"; margin-right: 5px; }
+  .iconPause::before { content: "[❚❚]"; margin-right: 5px; }
+  .iconReset::before { content: "[↺]"; margin-right: 5px; }

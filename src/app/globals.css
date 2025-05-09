@@ -1,26 +1,62 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --foreground-rgb: 68, 64, 60;
+  --background-start-rgb: 255, 251, 235;
+  --background-end-rgb: 255, 247, 237;
+  --accent-color: 180, 83, 9;
+  --accent-light: 217, 119, 6;
+  --neutral-light: 231, 229, 228;
+  --neutral-dark: 41, 37, 36;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  body {
+    color: rgb(var(--foreground-rgb));
+    background: linear-gradient(
+      to bottom,
+      rgb(var(--background-start-rgb)),
+      rgb(var(--background-end-rgb))
+    );
+    min-height: 100vh;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-playfair);
+  }
+  
+  p, a, li, span, div {
+    font-family: var(--font-inter);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+  .brew-card {
+    @apply relative bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 ease-in-out;
+    @apply hover:shadow-xl hover:-translate-y-1;
+    @apply border border-amber-100;
+  }
+  
+  .brew-card-content {
+    @apply p-6 z-10 relative;
+  }
+  
+  .brew-card-bg {
+    @apply absolute inset-0 bg-gradient-to-br opacity-10 transition-opacity duration-300;
+    @apply group-hover:opacity-20;
+  }
+  
+  .btn-primary {
+    @apply px-6 py-3 bg-amber-800 text-amber-50 rounded-lg font-medium;
+    @apply transition duration-300 ease-in-out;
+    @apply hover:bg-amber-700 hover:shadow-md;
+    @apply focus:outline-none focus:ring-2 focus:ring-amber-600 focus:ring-opacity-50;
+  }
+  
+  .section-title {
+    @apply text-3xl font-bold text-amber-900 mb-6 font-playfair;
+    @apply after:content-[''] after:block after:w-24 after:h-1 after:bg-amber-300 after:mt-2;
+  }
 }
